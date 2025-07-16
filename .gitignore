@@ -1,0 +1,17 @@
+# === FRONTEND IGNORE ===
+/frontend/node_modules/
+/frontend/.env
+/frontend/build/
+/frontend/dist/
+/frontend/.next/
+/frontend/.turbo/
+/frontend/.vite/
+/frontend/.cache/
+/frontend/package-lock.json
+
+# === BACKEND IGNORE ===
+/backend/node_modules/
+/backend/.env
+/backend/logs/
+/backend/tmp/
+/backend/package-lock.json
