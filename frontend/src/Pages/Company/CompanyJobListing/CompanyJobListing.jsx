@@ -15,7 +15,7 @@ export default function CompanyJobListings() {
         const data = await fetchJobListings();
         setJobs(data);
       } catch (err) {
-        setError("Failed to fetch job listings.");
+        // setError("Failed to fetch job listings.");
       } finally {
         setLoading(false);
       }

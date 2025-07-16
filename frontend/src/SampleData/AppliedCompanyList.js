@@ -3,12 +3,12 @@ const statuses = ["Application Submitted", "Under Review", "Interview Process", 
 const companies = [
   {
     id: 1,
-    name: "TechCp",
+    name: "TCS",
     package: "120,000",
     registrationDate: "2024-08-20",
-    image: "https://tse4.mm.bing.net/th?id=OIP.2AmwrTnE_ys6QNCFe6iKRwHaHa&pid=Api&P=0&h=180",
+    image: "https://s7ap1.scene7.com/is/image/TCSCOMprod/tcs-dark-logo-1?wid=1000&hei=563&dpr=off",
     description:
-      "TechCorp is a leading innovator in technology solutions, providing cutting-edge software and hardware solutions to businesses worldwide.",
+      "Tata Consultancy Services (TCS) (BSE: 532540, NSE: TCS) is a digital transformation and technology partner of choice for industry-leading organizations worldwide. Since its inception in 1968, TCS has upheld the highest standards of innovation, engineering excellence and customer service.",
     eligibilityCriteria: ["Minimum G.P.A 7", "Zero Backlogs", "10/12th 75+%"],
     jobRole: "Software Engineer",
     jobResponsibilities: [
@@ -36,12 +36,12 @@ const companies = [
   },
   {
     id: 2,
-    name: "InnovateX",
+    name: "Accenture",
     package: "95,000",
     registrationDate: "2024-08-22",
-    image: "https://tse1.mm.bing.net/th?id=OIP.TNvtdfBQCNPMkCJYfcv3CgHaHa&pid=Api&P=0&h=180",
+    image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQU1VNTqHAGDcx3h7PgqvSxKZzDP7VoZsY9cQ&s",
     description:
-      "InnovateX focuses on creating advanced technology solutions for modern business challenges, with a strong emphasis on innovation and sustainability.",
+      "Accenture plc is a global multinational professional services company originating in the United States and headquartered in Dublin, Ireland, that specializes in information technology services and management consulting. It was founded in 1989",
     eligibilityCriteria: ["Minimum G.P.A 6.5", "No more than 1 Backlog", "10/12th 70+%"],
     jobRole: "Product Manager",
     jobResponsibilities: [
@@ -66,13 +66,13 @@ const companies = [
     ],
     status: statuses[Math.floor(Math.random() * statuses.length)],
   },  {
-    id: 1,
-    name: "TechCorp",
+    id: 3,
+    name: "Infosys",
     package: "120,000",
     registrationDate: "2024-08-20",
-    image: "https://tse4.mm.bing.net/th?id=OIP.2AmwrTnE_ys6QNCFe6iKRwHaHa&pid=Api&P=0&h=180",
+    image: "https://brandlogos.net/wp-content/uploads/2022/02/infosys-logo-brandlogos.net_.png",
     description:
-      "TechCorp is a leading innovator in technology solutions, providing cutting-edge software and hardware solutions to businesses worldwide.",
+      "Infosys Limited is an Indian multinational technology company that offers business consulting, information technology, and outsourcing services. ",
     eligibilityCriteria: ["Minimum G.P.A 7", "Zero Backlogs", "10/12th 75+%"],
     jobRole: "Software Engineer",
     jobResponsibilities: [

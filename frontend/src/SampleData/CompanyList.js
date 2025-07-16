@@ -1,13 +1,13 @@
 const companies = [
   {
     id: 1,
-    name: "TechCorp",
+    name: "TCS",
     package: "120,000",
     registrationDate: "2024-08-20",
     image:
-      "https://tse4.mm.bing.net/th?id=OIP.2AmwrTnE_ys6QNCFe6iKRwHaHa&pid=Api&P=0&h=180",
+      "https://s7ap1.scene7.com/is/image/TCSCOMprod/tcs-dark-logo-1?wid=1000&hei=563&dpr=off",
     description:
-      "TechCorp is a leading innovator in technology solutions, providing cutting-edge software and hardware solutions to businesses worldwide.",
+    "Tata Consultancy Services (TCS) (BSE: 532540, NSE: TCS) is a digital transformation and technology partner of choice for industry-leading organizations worldwide. Since its inception in 1968, TCS has upheld the highest standards of innovation, engineering excellence and customer service.",
     eligibilityCriteria: ["Minimum G.P.A 7", "Zero Backlogs", "10/12th 75+%"],
     jobRole: "Software Engineer",
     jobResponsibilities: [
@@ -34,11 +34,11 @@ const companies = [
   },
   {
     id: 2,
-    name: "InnovateX",
-    package: "95,000",
+    name: "Accenture",
+    package: "45,0000",
     registrationDate: "2024-08-22",
     image:
-      "https://tse1.mm.bing.net/th?id=OIP.TNvtdfBQCNPMkCJYfcv3CgHaHa&pid=Api&P=0&h=180",
+      "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQU1VNTqHAGDcx3h7PgqvSxKZzDP7VoZsY9cQ&s",
     description:
       "InnovateX focuses on creating advanced technology solutions for modern business challenges, with a strong emphasis on innovation and sustainability.",
     eligibilityCriteria: [
@@ -104,44 +104,9 @@ const companies = [
       { name: "David Wilson", dateApplied: "2024-08-19" },
     ],
   },
+ 
   {
     id: 4,
-    name: "InnovateX",
-    package: "95,000",
-    registrationDate: "2024-08-22",
-    image:
-      "https://tse1.mm.bing.net/th?id=OIP.TNvtdfBQCNPMkCJYfcv3CgHaHa&pid=Api&P=0&h=180",
-    description:
-      "InnovateX focuses on creating advanced technology solutions for modern business challenges, with a strong emphasis on innovation and sustainability.",
-    eligibilityCriteria: [
-      "Minimum G.P.A 6.5",
-      "No more than 1 Backlog",
-      "10/12th 70+%",
-    ],
-    jobRole: "Product Manager",
-    jobResponsibilities: [
-      "Define product vision and strategy",
-      "Work with engineering and design teams to develop product requirements",
-      "Manage product lifecycle from conception to launch",
-      "Analyze market trends and customer needs to drive product innovation",
-    ],
-    jobRequirements: [
-      "Bachelor's degree in Business or a related field",
-      "5+ years of experience in product management",
-      "Strong understanding of product lifecycle management",
-      "Excellent leadership and organizational skills",
-    ],
-    contact: {
-      website: "https://www.innovatex.com",
-      phone: "+1 (555) 654-3210",
-    },
-    appliedStudents: [
-      { name: "Charlie Brown", dateApplied: "2024-08-18" },
-      { name: "David Wilson", dateApplied: "2024-08-19" },
-    ],
-  },
-  {
-    id: 5,
     name: "GreenTech",
     package: "110,000",
     registrationDate: "2024-08-25",

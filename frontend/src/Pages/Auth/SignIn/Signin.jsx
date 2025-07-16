@@ -1,44 +1,79 @@
 import React, { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 import { studentLogin } from '../../../api/Student/Student.api';
 import { companyLogin } from '../../../api/Company/Company.api';
+import { Eye, EyeOff } from 'lucide-react'; 
 import { adminLogin } from '../../../api/Admin/Admin.api';
 
+
 const SignIn = () => {
-  const [role, setRole] = useState('student');
-  const [email, setEmail] = useState('');
-  const [password, setPassword] = useState('');
-  const [error, setError] = useState('');
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+  const [error, setError] = useState("");
 
-  const handleRoleChange = (e) => {
-    setRole(e.target.value);
-  };
+  const [showPassword, setShowPassword] = useState(false);
+  const navigate = useNavigate();
 
-  const handleSubmit = async (e) => {
+  const handleLogin = async (e) => {
     e.preventDefault();
+    setError("");
+
     try {
-      let response;
-      if (role === 'student') {
-        response = await studentLogin(email, password);
-      } else if (role === 'company') {
-        response = await companyLogin(email, password);
-      } else if (role === 'admin') {
-        response = await adminLogin(email, password);
+      const response = await fetch("http://localhost:5000/api/login", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ email, password }),
+      });
+
+      if (!response.ok) {
+        throw new Error("Invalid email or password");
       }
-      console.log('Login successful:', response);
-      // Handle successful login (e.g., redirect to a dashboard)
+
+      const data = await response.json();
+      console.log(data.user);
+      const { token, user } = data;
+    
+
+      // Save the token and role in localStorage
+      localStorage.setItem("token", token);
+      if (user.s_id) {
+        localStorage.setItem("studentId", user.s_id); // Store studentId if the user is a student
+      }
+      localStorage.setItem("role", user.role);
+
+      // Redirect based on the role
+      if (user.role === "admin") {
+        navigate("/admin");
+      } else if (user.role === "hod") {
+        navigate("/hod-dashboard");
+      } else if (user.role === "company") {
+        navigate("/company");
+      } else if (user.role === "student") {
+        navigate("/student");
+      }
     } catch (error) {
-      setError(error.message || 'An error occurred during login');
-      console.error('Login failed:', error);
+      setError(error.message);
     }
   };
+
+
+
+
+  const handleForgetPassword = () => {
+    navigate("/changepassword");
+  };
+
+
 
   return (
     <div className="flex items-center justify-center min-h-screen">
       <div className="w-full max-w-md p-8 space-y-8 bg-white rounded-lg shadow-lg">
         <h2 className="text-2xl font-bold text-center">Sign In</h2>
-        <form className="space-y-6" onSubmit={handleSubmit}>
+        {/* <form className="space-y-6" onSubmit={handleSubmit}> */}
+        <form className="space-y-6" onSubmit={handleLogin}>
+
           {/* Role Selection */}
-          <div>
+          {/* <div>
             <label htmlFor="role" className="block mb-2 text-sm font-medium text-gray-700">
               Select Role
             </label>
@@ -52,7 +87,7 @@ const SignIn = () => {
               <option value="admin">Admin/Hod</option>
               <option value="company">Company</option>
             </select>
-          </div>
+          </div> */}
 
           {/* Email Input */}
           <div>
@@ -71,20 +106,31 @@ const SignIn = () => {
           </div>
 
           {/* Password Input */}
-          <div>
-            <label htmlFor="password" className="block mb-2 text-sm font-medium text-gray-700">
-              Password
-            </label>
-            <input
-              id="password"
-              type="password"
-              value={password}
-              onChange={(e) => setPassword(e.target.value)}
-              required
-              className="block w-full px-3 py-2 mt-1 text-gray-700 bg-gray-200 border border-gray-300 rounded-md focus:outline-none focus:ring focus:ring-gray-300"
-              placeholder="Enter your password"
-            />
-          </div>
+          {/* Password Input */}
+<div>
+  <label htmlFor="password" className="block mb-2 text-sm font-medium text-gray-700">
+    Password
+  </label>
+  <div className="relative">
+    <input
+      id="password"
+      type={showPassword ? "text" : "password"}
+      value={password}
+      onChange={(e) => setPassword(e.target.value)}
+      required
+      className="block w-full px-3 py-2 mt-1 text-gray-700 bg-gray-200 border border-gray-300 rounded-md focus:outline-none focus:ring focus:ring-gray-300"
+      placeholder="Enter your password"
+    />
+    <button
+      type="button"
+      onClick={() => setShowPassword((prev) => !prev)}
+      className="absolute inset-y-0 right-0 flex items-center px-3 text-gray-600"
+    >
+      {showPassword ? <EyeOff size={18} /> : <Eye size={18} />}
+    </button>
+  </div>
+</div>
+
 
           {/* Error Message */}
           {error && <div className="text-red-500 text-sm">{error}</div>}
@@ -98,6 +144,7 @@ const SignIn = () => {
               Sign In
             </button>
           </div>
+          <div className='justify-end flex'><button className='rounded-full p-2' type="button" onClick={() => navigate("/changePassword")}>Forget Password ?</button></div>
         </form>
       </div>
     </div>

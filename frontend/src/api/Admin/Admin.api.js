@@ -27,7 +27,7 @@ apiClient.interceptors.request.use(config => {
 // Admin login
 export const adminLogin = async (email, password) => {
   try {
-    const response = await apiClient.post('/api/login/admin', { email, password });
+    const response = await apiClient.post('/login', { email, password });
     return response.data;
   } catch (error) {
     throw error.response.data;
@@ -69,7 +69,7 @@ export const getCompanyById = async (companyId) => {
 // Get all HODs
 export const getAllHods = async () => {
   try {
-    const response = await apiClient.get('/api/admin/hods');
+    const response = await apiClient.get('http://localhost:5000/api/getHODDetails');
     return response.data;
   } catch (error) {
     throw error;

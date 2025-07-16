@@ -56,10 +56,10 @@ const StudentList = ({ batch, data }) => {
                         data.map((student, index) => (
                           <tr key={index}>
                             <td className="px-6 py-4 whitespace-no-wrap text-sm text-gray-800 leading-5">
-                              <p>{student.rollNo}</p>
+                              <p>{student.s_id}</p>
                             </td>
                             <td className="px-6 py-4 whitespace-no-wrap text-sm text-gray-800 leading-5">
-                              <p>{student.name}</p>
+                              <p>{student.student_name}</p>
                             </td>
                             <td className="px-6 py-4 whitespace-no-wrap text-sm text-gray-800 leading-5">
                               <p>{student.branch}</p>

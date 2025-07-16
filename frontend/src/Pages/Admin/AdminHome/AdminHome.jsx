@@ -16,8 +16,8 @@ import { getHodData } from "../../../api/Admin/Admin.api";
 const AdminHome = () => {
   const [data, setData] = useState({
   Batch: 2025,
-  Students: 4500,
-  Selected_Students: 1451,
+  Students: 300,
+  Selected_Students: 288,
   Companies: 50,
   Applications: 4000,
   });

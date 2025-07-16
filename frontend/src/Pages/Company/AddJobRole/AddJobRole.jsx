@@ -68,7 +68,7 @@ export default function AddJobRole() {
     }
   };
   return (
-    <div className="p-4 sm:ml-64 text-white min-h-screen">
+    <div className="p-4 sm:ml-64 text-black min-h-screen">
       <div className="grid mb-4 pb-10 px-8 mx-4 rounded 0">
         <div className="max-w-6xl mx-auto p-6 bg-white shadow-lg rounded-lg">
           <h2 className="text-3xl font-bold mb-8 text-gray-800">
@@ -186,7 +186,7 @@ export default function AddJobRole() {
                   htmlFor="minimumGPA"
                   className="block text-sm font-medium text-gray-700"
                 >
-                  Minimum GPA
+                  Minimum CGPA
                 </label>
                 <input
                   type="number"
@@ -194,7 +194,7 @@ export default function AddJobRole() {
                   name="minimumGPA"
                   step="0.01"
                   min="0"
-                  max="4"
+                  max="10"
                   required
                   className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50"
                   onChange={handleInputChange}

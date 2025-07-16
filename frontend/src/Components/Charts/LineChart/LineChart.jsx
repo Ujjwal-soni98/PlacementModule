@@ -11,15 +11,14 @@ import {
   ResponsiveContainer,
 } from "recharts";
 
-// Sample data for the chart
 const data = [
-  { name: "Jan", uv: 4000, pv: 2400, amt: 2400 },
-  { name: "Feb", uv: 3000, pv: 1398, amt: 2210 },
-  { name: "Mar", uv: 2000, pv: 9800, amt: 2290 },
-  { name: "Apr", uv: 2780, pv: 3908, amt: 2000 },
-  { name: "May", uv: 1890, pv: 4800, amt: 2181 },
-  { name: "Jun", uv: 2390, pv: 3800, amt: 2500 },
-  { name: "Jul", uv: 3490, pv: 4300, amt: 2100 },
+  { name: "Jan", "2025 placed CS students": 40, "2024 placed CS students": 20, amt: 2400 },
+  { name: "Feb", "2025 placed CS students": 30, "2024 placed CS students": 13, amt: 2210 },
+  { name: "Mar", "2025 placed CS students": 5, "2024 placed CS students": 98, amt: 2290 },
+  { name: "Apr", "2025 placed CS students": 8, "2024 placed CS students": 39, amt: 2000 },
+  { name: "May", "2025 placed CS students": 30, "2024 placed CS students": 4, amt: 2181 },
+  { name: "Jun", "2025 placed CS students": 45, "2024 placed CS students": 38, amt: 2500 },
+  { name: "Jul", "2025 placed CS students": 130, "2024 placed CS students": 4, amt: 2100 },
 ];
 
 const LineChartComponent = () => {
@@ -39,8 +38,8 @@ const LineChartComponent = () => {
         <YAxis />
         <Tooltip />
         <Legend />
-        <Line type="monotone" dataKey="pv" stroke="#8884d8" />
-        <Line type="monotone" dataKey="uv" stroke="#82ca9d" />
+        <Line type="monotone" dataKey="2025 placed CS students" stroke="#8884d8" />
+        <Line type="monotone" dataKey="2024 placed CS students" stroke="#82ca9d" />
       </LineChart>
     </ResponsiveContainer>
   );

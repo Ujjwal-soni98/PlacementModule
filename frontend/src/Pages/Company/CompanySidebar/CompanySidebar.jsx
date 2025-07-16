@@ -1,11 +1,20 @@
 import React, { useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
 const CompanySidebar = () => {
   const [issidebaropen, setIssidebaropen] = useState(false);
   const handlesidebar = () => {
     setIssidebaropen(!issidebaropen);
   };
+  const navigate = useNavigate();
+    const handleLogout = () => {
+      // Remove token and role from local storage
+      localStorage.removeItem("token");
+      localStorage.removeItem("role");
+  
+      // Redirect the user to the sign-in page
+      window.location.replace("/signin");
+    };
   return (
     <>
       <button
@@ -153,7 +162,7 @@ const CompanySidebar = () => {
                 <span className="ms-3">Listed Roles</span>
               </Link>
             </li>
-            <li>
+            {/* <li>
               <Link
                 to="/company/applications"
                 className="flex items-center p-2 hover:text-white text-blue-900 rounded-lg  hover:bg-blue-700  group"
@@ -173,7 +182,7 @@ const CompanySidebar = () => {
                 </svg>
                 <span className="ms-3">Applications</span>
               </Link>
-            </li>
+            </li> */}
           </ul>
           <ul className="space-y-2 font-medium">
             <li>
@@ -201,29 +210,29 @@ const CompanySidebar = () => {
               </Link>
             </li>
             <li>
-              <Link
-                to="/"
-                className="flex items-center p-2 text-white hover:text-blue-900 rounded-lg hover:bg-slate-400 bg-blue-700  group"
-              >
-                <svg
-                  className="h-8 w-8 hover:text-blue-200 text-blue-500"
-                  width="24"
-                  height="24"
-                  viewBox="0 0 24 24"
-                  strokeWidth="2"
-                  stroke="currentColor"
-                  fill="none"
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                >
-                  {" "}
-                  <path stroke="none" d="M0 0h24v24H0z" />{" "}
-                  <path d="M14 8v-2a2 2 0 0 0 -2 -2h-7a2 2 0 0 0 -2 2v12a2 2 0 0 0 2 2h7a2 2 0 0 0 2 -2v-2" />{" "}
-                  <path d="M7 12h14l-3 -3m0 6l3 -3" />
-                </svg>
-                <span className="ms-3">Log Out</span>
-              </Link>
-            </li>
+                 <Link
+                   to=""
+                   onClick={handleLogout} // Call the handleLogout function on click
+                   className="flex items-center p-2 text-white hover:text-blue-900 rounded-lg hover:bg-blue-400 bg-blue-700  group"
+                 >
+                   <svg
+                     className="h-8 w-8 hover:text-blue-200 text-blue-50"
+                     width="24"
+                     height="24"
+                     viewBox="0 0 24 24"
+                     strokeWidth="2"
+                     stroke="currentColor"
+                     fill="none"
+                     strokeLinecap="round"
+                     strokeLinejoin="round"
+                   >
+                     <path stroke="none" d="M0 0h24v24H0z" />
+                     <path d="M14 8v-2a2 2 0 0 0 -2 -2h-7a2 2 0 0 0 -2 2v12a2 2 0 0 0 2 2h7a2 2 0 0 0 2 -2v-2" />
+                     <path d="M7 12h14l-3 -3m0 6l3 -3" />
+                   </svg>
+                   <span className="ms-3">Log Out</span>
+                 </Link>
+               </li>
           </ul>
         </div>
       </aside>
