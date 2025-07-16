@@ -30,9 +30,12 @@ npm run start
 ```
 
 ### 🕹️ Run Backend
+
+```bash
 cd backend
 npm install
 npm run start
+```
 
 
 ## 🗄️ Database Setup
