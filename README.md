@@ -1,8 +1,8 @@
 # Placement_module
 
-## How to run the project loacally ??
-Let me tell you through very simple steps:
+## Start the project locally 🚀🚀
 
+Here's the very simple guide to run this project locally.
 
 ### 🔧 Prerequisites
 
