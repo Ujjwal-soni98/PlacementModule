@@ -11,7 +11,7 @@ Here's the very simple guide to run this project locally.
 
 ## 📁 Folder Structure
 
-PlacementModule/
+PlacementModule
 ├── frontend/ # React app
 ├── backend/ # Node.js + Express app
 ├── .gitignore
