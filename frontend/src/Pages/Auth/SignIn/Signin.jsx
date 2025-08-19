@@ -4,7 +4,7 @@ import { studentLogin } from '../../../api/Student/Student.api';
 import { companyLogin } from '../../../api/Company/Company.api';
 import { Eye, EyeOff } from 'lucide-react'; 
 import { adminLogin } from '../../../api/Admin/Admin.api';
-
+import { toastService } from '../../../services/toastService';
 
 const SignIn = () => {
   const [email, setEmail] = useState("");
@@ -24,6 +24,10 @@ const SignIn = () => {
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ email, password }),
       });
+
+      if(response.ok){
+        toastService.success("Logged In Succesfully🚀")
+      }
 
       if (!response.ok) {
         throw new Error("Invalid email or password");

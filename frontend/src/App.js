@@ -1,6 +1,7 @@
 import { useEffect } from 'react';
 import { BrowserRouter as Router, Routes, Route, useNavigate } from 'react-router-dom';
 import LandingPage from './Pages/LandingPage/LandingPage';
+import { ToastContainer } from "react-toastify";
 
 // Student Pages
 import StudentDashboard from './Pages/Student/StudentSidebar/StudentSidebar';
@@ -66,6 +67,7 @@ function App() {
     <div className="min-h-screen bg-yellow-400/40">
       <Router>
         <AuthWrapper>
+          <ToastContainer position="top-right" autoClose={3000} />
           <Routes>
             {/* Landing Page */}
             <Route path="/" element={<LandingPage />} />
