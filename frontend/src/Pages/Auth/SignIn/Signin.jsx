@@ -125,9 +125,11 @@ const SignIn = () => {
       type="button"
       onClick={() => setShowPassword((prev) => !prev)}
       className="absolute inset-y-0 right-0 flex items-center px-3 text-gray-600"
+
     >
       {showPassword ? <EyeOff size={18} /> : <Eye size={18} />}
     </button>
+    
   </div>
 </div>
 
@@ -139,7 +141,7 @@ const SignIn = () => {
           <div>
             <button
               type="submit"
-              className="w-full px-4 py-2 text-white bg-gray-600 rounded-md hover:bg-gray-700 focus:outline-none focus:bg-gray-700"
+              className="w-full px-4 py-2 text-black bg-transparent rounded-md hover:bg-black hover:text-white border-4 border-yellow-300 focus:bg-gray-700"
             >
               Sign In
             </button>

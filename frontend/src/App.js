@@ -63,7 +63,7 @@ function AuthWrapper({ children }) {
 
 function App() {
   return (
-    <div className="min-h-screen bg-[#172554]">
+    <div className="min-h-screen bg-yellow-400/40">
       <Router>
         <AuthWrapper>
           <Routes>
