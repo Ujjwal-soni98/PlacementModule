@@ -42,8 +42,9 @@ function AuthWrapper({ children }) {
 
     if (!token || !role) {
       // If token or role is missing, navigate to signin
-      navigate('/signin');
-    } else {
+      // navigate('/signin');
+    } 
+    else {
       // Only redirect to the dashboard when the path is '/'
       if (window.location.pathname === '/') {
         if (role === "admin") {
@@ -84,9 +85,27 @@ function App() {
             <Route path="/student/profile" element={<div><StudentSidebar /><StudentDetails /></div>} />
 
             {/* Admin Routes */}
-            <Route path="/admin" element={<div><AdminSidebar /><AdminHome /></div>} />
-            <Route path="/admin/hods" element={<div><AdminSidebar /><AllHod /></div>} />
-            <Route path="/admin/companies" element={<div><AdminSidebar /><CompanyCardList /></div>} />
+            <Route path="/admin" element={
+              <div>
+              <AdminSidebar />
+              <AdminHome />
+              </div>
+              } 
+            />
+            <Route path="/admin/hods" element={
+              <div>
+              <AdminSidebar />
+              <AllHod />
+              </div>
+              }
+            />
+            <Route path="/admin/companies" element={
+              <div>
+                <AdminSidebar />
+                <CompanyCardList />
+              </div>
+                } 
+              />
             <Route path="/admin/students" element={<div><AdminSidebar /><AllStudents /></div>} />
             <Route path="/admin/companies/company/:id" element={<div><AdminSidebar /><CompanyDetails /></div>} />
             <Route path="/admin/students/:rollNo" element={<div><AdminSidebar /><StudentDetails /></div>} />
