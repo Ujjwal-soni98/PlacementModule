@@ -28,7 +28,7 @@ const UpcomingCompanies = () => {
   return (
 <>
         <div className="flex items-center h-10 intro-y">
-          <h2 className="mr-5 text-2xl font-bold text-gray-100 truncate">
+          <h2 className="mr-5 text-2xl font-bold text-gray-700 truncate">
             Upcoming Companies
           </h2>
         </div>

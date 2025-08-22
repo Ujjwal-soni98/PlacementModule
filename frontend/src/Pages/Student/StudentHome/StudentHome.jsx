@@ -33,7 +33,7 @@ const StudentHome = () => {
       {/* Header */}
       <div className="p-4 sm:ml-64 min-h-screen">
       <div className="mb-4 pb-10 min-h-screen px-8 mx-4 rounded">
-        <h1 className="mb-4 text-4xl font-extrabold leading-none rounded-sm shadow-xl tracking-tight text-gray-50 md:text-5xl lg:text-6xl text-center bg-blue-600 p-5 ">
+        <h1 className="mb-4 text-4xl font-extrabold leading-none rounded-sm shadow-2xl tracking-tight text-gray-700 md:text-5xl lg:text-6xl text-center bg-transparent p-5 ">
           Welcome To Placement Portal
         </h1>
 

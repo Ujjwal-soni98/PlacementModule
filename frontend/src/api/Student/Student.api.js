@@ -117,6 +117,7 @@ export const fetchUpcomingCompanies = async () => {
 export const addEducationDetails = async (newData) => {
   try {
     const studentId = getStudentId(); // Get student ID from local storage
+    console.log("line 120",studentId);
     if (!studentId) {
       throw new Error("Student ID not found");
     }
