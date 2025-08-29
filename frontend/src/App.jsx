@@ -2,6 +2,7 @@ import { useEffect } from 'react';
 import { BrowserRouter as Router, Routes, Route, useNavigate } from 'react-router-dom';
 import LandingPage from './Pages/LandingPage/LandingPage';
 import { ToastContainer } from "react-toastify";
+import Register from "./Pages/Auth/register/register.jsx"
 
 // Student Pages
 import StudentDashboard from './Pages/Student/StudentSidebar/StudentSidebar';
@@ -42,7 +43,7 @@ function AuthWrapper({ children }) {
 
     if (!token || !role) {
       // If token or role is missing, navigate to signin
-      // navigate('/signin');
+      navigate('/');
     } 
     else {
       // Only redirect to the dashboard when the path is '/'
@@ -58,7 +59,7 @@ function AuthWrapper({ children }) {
         }
       }
     }
-  }, [navigate]);
+  }, []);
 
   return children;
 }
@@ -74,6 +75,7 @@ function App() {
             <Route path="/" element={<LandingPage />} />
 
             {/* Auth */}
+            <Route path="/register" element={<Register />} />
             <Route path="/signin" element={<SignIn />} />
             <Route path="/changepassword" element={<ChangePassword />} />
 

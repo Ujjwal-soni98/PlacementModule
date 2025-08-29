@@ -1,8 +1,8 @@
 import axios from 'axios';
 
 // Base URL for API requests
-const baseURL = process.env.REACT_APP_BASE_URL;
-
+const baseURL = import.meta.env.VITE_BASE_URL;
+console.log(baseURL,)
 // Function to get the authentication token from local storage
 const getAuthToken = () => localStorage.getItem('authToken');
 

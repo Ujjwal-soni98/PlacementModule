@@ -1,3 +1,29 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+/* Removed @custom-variant and @theme inline for now */
+
+@layer base {
+  :root {
+    --color-border: hsl(220 14% 96%);
+    --color-ring: hsl(215 20% 65%);
+    /* --color-background: white; */
+    /* --color-foreground: black; */
+  }
+
+  .dark {
+    --color-border: hsl(220 14% 20%);
+    --color-ring: hsl(215 20% 40%);
+    --color-background: black;
+    --color-foreground: white;
+  }
+
+  /* * {
+    @apply border-border outline outline-ring/50;
+  } */
+
+  /* body {
+    @apply bg-background text-foreground;
+  } */
+}

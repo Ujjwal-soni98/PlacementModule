@@ -103,7 +103,16 @@ const LandingPage = () => {
           </div>
 
           {/* Sign In Dropdown */}
-          <div className="relative">
+          <div className="relative flex gap-2">
+              
+            <motion.button className="flex items-center space-x-2 bg-white/10 backdrop-blur-sm 
+            border border-white/20 text-white px-6 py-3 rounded-lg hover:bg-white/20 
+            transition-all duration-300" 
+            onClick={()=>{
+              navigate("/register");
+            }}>
+              <span className="font-medium">Register</span>
+            </motion.button>
             <motion.button
               onClick={() => setIsDropdownOpen(!isDropdownOpen)}
               className="flex items-center space-x-2 bg-white/10 backdrop-blur-sm border border-white/20 text-white px-6 py-3 rounded-lg hover:bg-white/20 transition-all duration-300"
@@ -128,7 +137,7 @@ const LandingPage = () => {
                         e.stopPropagation();
                         console.log("Navigating to /signin");
                         navigate(`/signin`);
-                      }} // ✅ always goes to /signin
+                      }} //  always goes to /signin
                       className="cursor-pointer w-full flex items-center space-x-3 p-4 rounded-lg hover:bg-white/10 transition-all duration-200 group"
                     >
                       <div
@@ -164,7 +173,7 @@ const LandingPage = () => {
               transition={{ duration: 0.8 }}
               className="text-5xl md:text-7xl font-bold text-white mb-6 leading-tight"
             >
-              Placement Module
+              RecruitEasy
             </motion.h1>
             <motion.p
               initial={{ opacity: 0, y: 30 }}
@@ -293,7 +302,7 @@ const LandingPage = () => {
             transition={{ duration: 0.8, delay: 1.5 }}
             className="text-white/60"
           >
-            © 2024 Placement Module. All rights reserved.
+            © 2024 RecruitEasy. All rights reserved.
           </motion.p>
         </div>
       </footer>

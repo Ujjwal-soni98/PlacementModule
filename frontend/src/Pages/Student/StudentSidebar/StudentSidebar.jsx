@@ -14,7 +14,7 @@ const StudentSidebar = () => {
     localStorage.removeItem("role");
 
     // Redirect the user to the sign-in page
-    window.location.replace("/signin");
+    window.location.replace("/");
   };
 
   return (
